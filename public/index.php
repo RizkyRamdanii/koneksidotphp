@@ -47,7 +47,6 @@ view('header', ['tittle' => 'Login']);
                 </p>
             </div>
         </form>
-
 </div>
 
 <?php

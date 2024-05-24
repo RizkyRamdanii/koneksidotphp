@@ -5,7 +5,7 @@ include('../config/config.php');
 view('header', ['tittle' => 'Register']);
 
 if (isset($_POST['submit'])) {
-    # code...
+    # get all collum from table database
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $telepon = $_POST['telepon'];
@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $verifQuery = mysqli_query($con, "SELECT email FROM casisdata WHERE email='$email'");
 
     if (mysqli_num_rows($verifQuery) != 0) {
-        # code...
+        # conditional auth verification
         echo "<p>this email is used, try another one please!</p> <br>";
         echo "<a href='javascript:self.history.back()'><button>Go Back</button></a>";
     } else {
